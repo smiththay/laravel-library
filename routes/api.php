@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\UserController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +28,11 @@ Route::post('/books/create', [BookController::class, 'create']);
 Route::post ('/books/update/{id}', [BookController::class, 'update']);
 
 Route::post('/books/delete/{id}', [BookController::class, 'delete']);
+
+Route::get('/user/all', [UserController::class, 'index']);
+
+Route::post('/user/create', [UserController::class, 'create']);
+
+Route::post ('/user/update/{id}', [UserController::class, 'update']);
+
+Route::post('/user/delete/{id}', [UserController::class, 'delete']);
