@@ -2,6 +2,12 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\CheckoutController;
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +23,27 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/books/all', [BookController::class, 'index']);
+
+Route::post('/books/create', [BookController::class, 'create']);
+
+Route::post ('/books/update/{id}', [BookController::class, 'update']);
+
+Route::post('/books/delete/{id}', [BookController::class, 'delete']);
+
+
+
+
+Route::get('/user/all', [UserController::class, 'index']);
+
+Route::post('/user/create', [UserController::class, 'create']);
+
+Route::post ('/user/update/{id}', [UserController::class, 'update']);
+
+Route::post('/user/delete/{id}', [UserController::class, 'delete']);
+
+
+
+Route::get('/checkout/all', [CheckoutController::class, 'index']);
