@@ -47,4 +47,6 @@ class BookController extends Controller
     Book::find($id)->delete(); // D, hard delete
   }
 }
-
+// protected $fillable = [
+//       'columns', 'that', 'are', 'fillable'
+// ];

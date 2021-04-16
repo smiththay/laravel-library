@@ -42,3 +42,7 @@ class UserController extends Controller
   }
 }
 
+// protected $fillable = [
+//       'columns', 'that', 'are', 'fillable'
+// ];
+

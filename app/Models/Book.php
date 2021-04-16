@@ -13,8 +13,12 @@ class Book extends Model
   public $incrementing = true;
   public $timestamps = true;
   
-//   public function checkouts()
-//   {
-//     return $this->hasMany('App\Models\Checkout', 'ref_book_id');
-//   }
+  protected $fillable = [
+      'title', 'isbn', 'excerpt', 'pages', 'cost', 'released', 'current_condition', 'status'
+];
+
+  public function checkout() {
+    return $this->hasMany(Checkout::class);
+  }
+  
 }
